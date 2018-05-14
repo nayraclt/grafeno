@@ -85,8 +85,8 @@ class LicitacaoCnpqController extends Controller
         $publicacoes = $this->sanitizeString($publicacoes[0]);
 
         $arrLicitacao = [
-            'objeto'=>$objeto,
-            'abertura'=>$abertura,
+            'titulo'=>$objeto,
+            'conteudo'=>$abertura,
             'publicacoes'=>$publicacoes,
         ];
 
