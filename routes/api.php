@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+
+//Rotas públicas (Que não necessitam de Autenticação e Autorização
+Route::group([], function(){
+    Route::get('/lista-licitacao-cnpq', 'Captura\LicitacaoCnpqController@buscarLicitacoesCNPQ');
+});
