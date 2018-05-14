@@ -68,9 +68,9 @@ class LicitacaoCnpqController extends Controller
 
 //            dd(strip_tags($objeto[0]), $abertura[0], $publicacoes[0]);
 
-        $objeto = $objeto[0];
-        $abertura = $abertura[0];
-        $publicacoes = $publicacoes[0];
+        $objeto = $this->sanitizeString($objeto[0]);
+        $abertura = $this->sanitizeString($abertura[0]);
+        $publicacoes = $this->sanitizeString($publicacoes[0]);
 
         $arrLicitacao = [
             'objeto'=>$objeto,
@@ -79,6 +79,20 @@ class LicitacaoCnpqController extends Controller
         ];
 
         return $arrLicitacao;
+    }
+    
+        /**
+     * @param $string
+     * @return null|string|string[]
+     * Retirando caracteres especiais
+     */
+    private function sanitizeString($string) {
+
+        $str=preg_replace("@\n@","",$string);
+        $str=preg_replace("@\t@","",$str);
+
+        return $str;
+
     }
 }
 
