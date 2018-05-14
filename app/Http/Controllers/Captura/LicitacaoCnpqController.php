@@ -14,9 +14,21 @@ class LicitacaoCnpqController extends Controller
      */
     public function buscarLicitacoesCNPQ(Request $request){        
 
+        $arrParams = http_build_query($request->all());
+
+        $requestOpts = array('http' =>
+            array(
+                'method'  => 'POST',
+                'header'  => 'Content-type: application/x-www-form-urlencoded',
+                'content' => $arrParams
+            )
+        );
+        
+        $contextRequest  = stream_context_create($requestOpts);
+        
         $url = 'http://www.cnpq.br/web/guest/licitacoes?p_p_id=licitacoescnpqportlet_WAR_licitacoescnpqportlet_INSTANCE_BHfsvMBDwU0V&p_p_lifecycle=0&p_p_state=normal';
 
-        $htmlCaptura = file_get_contents($url);
+        $htmlCaptura = file_get_contents($url, false, $contextRequest);
 
         $arrRetornoTratado = $this->tratandoHtmlApresentacao($htmlCaptura);
 
