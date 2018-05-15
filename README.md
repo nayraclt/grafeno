@@ -2,6 +2,16 @@
 
 Projeto Laravel 5.3, para teste.
 
+## Instalação
+
+ 1. Clona o projeto
+ 1. Na raiz do projeto, roda o composer
+
+
+```shel
+composer install
+```
+
 
 ## Endpoints API
 
