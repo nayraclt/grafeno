@@ -37,4 +37,4 @@ Um json com os seguintes índices
 
 ## Erros
 
- - **412* - Caso seja informado um parâmetro que não seja válido, e não informe pelo menos um válido.
+ - **412** - Caso seja informado um parâmetro que não seja válido, e não informe pelo menos um válido.
