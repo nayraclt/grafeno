@@ -21,7 +21,15 @@ composer install
 
 > ```GET api/lista-licitacao-cnpq```
 
-## Return
+## Formato do retorno
+
+Um json com os seguintes índices
+
+-   **titulo**  — Titulo da licitação
+-   **conteudo**  — Conteúdo da licitação
+-   **publicacoes**  — Datas da publicação
+
+## Retorno
 
 ```json
 {
@@ -31,15 +39,7 @@ composer install
 },
 ```
 
-## Return format
-
-Um json com os seguintes índices
-
--   **titulo**  — Titulo da licitação
--   **conteudo**  — Conteúdo da licitação
--   **publicacoes**  — Datas da publicação
-
-## Parameters
+## Parâmetros
 
  - **busca-licitacoes** - Retorna Licitações de acordo com os termos pesquisados.
  - **filtro-ano** - Retorna Licitações com o ano relacionado ao buscado
