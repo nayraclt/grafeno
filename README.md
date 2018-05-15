@@ -2,6 +2,9 @@
 
 Projeto Laravel 5.3, para teste.
 
+> Extração de dados das licitações listadas no site do CNPQ.
+> http://www.cnpq.br/web/guest/licitacoes
+
 ## Instalação
 
  1. Clona o projeto
