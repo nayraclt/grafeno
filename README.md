@@ -15,8 +15,8 @@ Projeto Laravel 5.3, para teste.
 
 ```json
 {
-        "objeto": "CONCORRÊNCIA N° 01/2017",
-        "abertura": ": Cessão administrativa de uso, onerosa, de espaço físico privativo de 43,00 m²...",
+        "titulo": "CONCORRÊNCIA N° 01/2017",
+        "conteudo": ": Cessão administrativa de uso, onerosa, de espaço físico privativo de 43,00 m²...",
         "publicacoes": ": 27/04/2018 às 10h "
 },
 ```
@@ -34,3 +34,7 @@ Um json com os seguintes índices
  - **busca-licitacoes** - Retorna Licitações de acordo com os termos pesquisados.
  - **filtro-ano** - Retorna Licitações com o ano relacionado ao buscado
  - **filtro-categoria** - Retorna licitações de acordo com a categoria pesquisada.
+
+## Erros
+
+ - **412* - Caso seja informado um parâmetro que não seja válido, e não informe pelo menos um válido.

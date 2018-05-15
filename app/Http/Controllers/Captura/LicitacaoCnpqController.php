@@ -14,8 +14,12 @@ class LicitacaoCnpqController extends Controller
      */
     public function buscarLicitacoesCNPQ(Request $request){        
 
-        $arrParams = http_build_query($request->all());
-
+        $arrParams = $request->all();
+        
+        $this->tratandoErros($arrParams);
+        
+        $arrParams = http_build_query($arrParams);
+                
         $requestOpts = array('http' =>
             array(
                 'method'  => 'POST',
@@ -105,6 +109,22 @@ class LicitacaoCnpqController extends Controller
 
         return $str;
 
+    }
+    
+    /**
+     * @param type $arrParams
+     * Retorna erro caso informe um parâmetro que não seja válido
+     */
+    private function tratandoErros($arrParams){
+        if($arrParams != []){
+               
+            if (!isset($arrParams['busca-licitacoes']) && !isset($arrParams['filtro-ano']) && !isset($arrParams['filtro-categoria']))
+            {
+                abort(412, 'O Parâmetro informado é inválido.'); // 412
+            }
+
+        }
+        
     }
 }
 
